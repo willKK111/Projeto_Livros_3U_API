@@ -2,9 +2,11 @@ package mapper;
 
 import domain.Livro;
 import dto.LivroRequestDto;
+import dto.LivroResponseDto;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface LivroMapper {
-    Livro toEntity(LivroRequestDto livroRequestDtodto);
+    Livro toEntityLivro(LivroRequestDto livroRequestDtodto);
+    LivroResponseDto toDtoLivro(Livro livro);
 }

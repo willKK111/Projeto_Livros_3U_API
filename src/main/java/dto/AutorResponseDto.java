@@ -11,7 +11,7 @@ import java.util.List;
 public class AutorResponseDto extends RepresentationModel<AutorResponseDto> {
     private String nome;
     private String nacionalidade;
-    private List<LivroRequestDto> livros;// tem que ver se isso aqui ta certo mesmo
+    private List<LivroResponseDto> livros;// tem que ver se isso aqui ta certo mesmo
 
     // this.add(WebMvcLinkBuilderFactory.linkTo(AutorController.class).slash(autor.getId()).withSelfRel());
     // this.add(WebMvcLinkBuilderFactory.linkTo(AutorController.class).withRel("autores"));

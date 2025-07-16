@@ -11,7 +11,7 @@ import java.util.List;
 public class EditoraResponseDto extends RepresentationModel<EditoraResponseDto> {
     private String nome;
     private String cidade;
-    private List<LivroRequestDto> livrosTitulos; // pode trocar para List<String> se quiser e  tem que ver se isso aqui ta certo mesmo
+    private List<LivroResponseDto> livrosTitulos; // pode trocar para List<String> se quiser e  tem que ver se isso aqui ta certo mesmo
 
     // this.add(WebMvcLinkBuilderFactory.linkTo(EditoraController.class).slash(editora.getId()).withSelfRel());
     // this.add(WebMvcLinkBuilderFactory.linkTo(EditoraController.class).withRel("editoras"));
