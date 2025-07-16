@@ -1,21 +1,29 @@
 package domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 
 import java.util.List;
-import java.util.Objects;
 
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+@EqualsAndHashCode(callSuper = true)
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@SQLDelete(sql = "UPDATE editora SET deleted_at = CURRENT_TIMESTAMP where id=?")
+@SQLRestriction("deleted_at is null")
 public class Editora extends BaseEntity {
 
+    @NotBlank(message = "o nome não pode estar em branco")
     private String nome;
+    @NotBlank(message = "a cidade não pode estar em branco")
     private String cidade;
 
     @OneToMany(mappedBy = "editora")
