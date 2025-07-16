@@ -1,0 +1,19 @@
+package dto;
+
+import lombok.Data;
+import org.springframework.hateoas.RepresentationModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilderFactory;
+//import controller.EditoraController;
+import domain.Editora;
+import java.util.List;
+
+@Data
+public class EditoraResponseDto extends RepresentationModel<EditoraResponseDto> {
+    private String nome;
+    private String cidade;
+    private List<LivroRequestDto> livrosTitulos; // pode trocar para List<String> se quiser e  tem que ver se isso aqui ta certo mesmo
+
+    // this.add(WebMvcLinkBuilderFactory.linkTo(EditoraController.class).slash(editora.getId()).withSelfRel());
+    // this.add(WebMvcLinkBuilderFactory.linkTo(EditoraController.class).withRel("editoras"));
+    // this.add(WebMvcLinkBuilderFactory.linkTo(EditoraController.class).slash(editora.getId()).withRel("delete"));
+}
